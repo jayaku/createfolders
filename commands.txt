@@ -1,0 +1,16 @@
+How to create group ?
+How to create users ?
+How to associate users to group ?
+How to change owners of the folders ?
+
+su
+jayaku@instance-1:~/projects$ sudo passwd
+Enter new UNIX password: <type the root password - see JKPass>
+Retype new UNIX password: <type the root password - see JKPass>
+passwd: password updated successfully
+
+groupadd edld_bbbf_etl
+groupadd edld_b3kf_sftp
+useradd edl_dev_bb5c_sftp
+useradd dev_bbbf_etl_appid
+
