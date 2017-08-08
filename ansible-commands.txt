@@ -1,0 +1,37 @@
+#ansible commands
+
+ansible all -i "localhost," -c local -m shell -a 'echo hello world'
+
+#Add this line in /etc/ansible/hosts
+#Login as root
+localhost ansible_connection=local
+exit
+
+$ ansible-playbook helloworld.yml 
+
+PLAY [all] *********************************************************************
+
+TASK [setup] *******************************************************************
+ok: [localhost]
+
+TASK [command] *****************************************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=1    unreachable=0    failed=0   
+
+Refer: http://ansible.pickle.io/post/86598332429/running-ansible-playbook-in-localhost
+
+jayaku@instance-1:~/projects$ ansible -m ping 'localhost'
+localhost | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+
+jayaku@instance-1:~/projects$ ansible -m ping 'localhost'
+localhost | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+
+

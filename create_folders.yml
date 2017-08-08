@@ -1,0 +1,10 @@
+---
+- hosts: all
+   
+  tasks:
+    - name : "Create edge node"
+      file: 
+        path: /landing1/ib/b9t6/marker 
+        state: directory 
+        mode: 0775
+...
