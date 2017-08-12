@@ -1,7 +1,8 @@
 #puppet commands
 
 sudo su
-rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
+rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+
 yum repolist | grep puppet
     puppetlabs-deps/x86_64     Puppet Labs Dependencies El 7 - x86_64             17
     puppetlabs-products/x86_64 Puppet Labs Products El 7 - x86_64                225
@@ -82,3 +83,10 @@ https://www.digitalocean.com/community/tutorials/how-to-install-puppet-in-standa
 Other references
 http://www.copperykeenclaws.com/setting-up-puppet-on-windows/
 http://devopspy.com/devops/installing-open-source-standalone-puppet-centos-7/
+
+rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
+
+puppet --version
+    4.10.6
+
+
