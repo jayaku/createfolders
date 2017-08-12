@@ -12,7 +12,7 @@ node "cent-os-1.c.exalted-tempo-176004.internal" {
   $epmcodes = ['b9t6', 'bb5c']
 
   $epmcodes.each |String $epmcode | {
-    file { "/landing1/ib/${epmcode}/metadata"'":
+    file { "/landing1/ib/${epmcode}/metadata":
       ensure => "directory",
       owner  => "root",
       group  => "root",
