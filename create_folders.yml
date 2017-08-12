@@ -1,0 +1,38 @@
+---
+- hosts: localhost
+   
+  tasks:
+    - name : "Create edge nodes"
+      file:  
+        path: /landing1/ib/{{item.0}}/{{item.1}}
+        state: directory 
+        mode: 0775
+      with_nested: 
+        - [ 'b9t6', 'bb5c' ]
+        - [ 'marker', 'metadata' ]
+
+    - name : "Create hdfs folders in tsz and edz"
+      command: hdfs dfs -mkdir /data/{{item.0}}/{{item.1}}/{{item.2}}
+      ignore_errors: yes
+      with_nested: 
+        - [ 'tsz', 'edz' ]
+        - [ 'b9t6', 'bb5c' ]
+        - [ 'int', 'pub', 'con', 'cpi' ]
+
+    - name : "Create hdfs snapshot folders in edz"
+      command: hdfs dfs -mkdir /data/{{item.0}}/{{item.1}}/{{item.2}}/snapshots
+      ignore_errors: yes
+      with_nested: 
+        - [ 'edz' ]
+        - [ 'b9t6', 'bb5c' ]
+        - [ 'int', 'pub', 'con', 'cpi' ]
+
+    - name: "Create hdfs folders in crz"
+      command: hdfs dfs -mkdir /data/{{item.0}}/{{item.1}}/{{item.2}}
+      ignore_errors: yes
+      with_nested: 
+        - [ 'crz' ]
+        - [ 'bbbf']
+        - [ 'int', 'pub', 'con', 'cpi' ]
+
+...
