@@ -1,18 +1,22 @@
 node "cent-os-1.c.exalted-tempo-176004.internal" {
-  $edge_dirs = [ 
-                 '/landing1', 
-                 '/landing1/ib', 
-                 '/landing1/ib/b9t6', 
-                 '/landing1/ib/b9t6/marker', 
-                 '/landing1/ib/b9t6/metadata', 
-               ]
+   $path = '/landing1/ib/b9t6/metadata'
 
-  file { $edge_dirs:
-    ensure => "directory",
-    owner  => "root",
-    group  => "root",
-    mode   => "0750",
-  }
+   $path_parents = all_parents($path)
 
-  #testing
+    file { $path_parents:
+      ensure => "directory",
+      owner  => "root",
+      group  => "root",
+      mode   => "0750",
+    }
+
+    file { $path:
+      ensure => "directory",
+      owner  => "root",
+      group  => "root",
+      mode   => "0750",
+      require => File[ $path_parents ],
+    }
 }
+
+
