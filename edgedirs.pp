@@ -14,4 +14,5 @@ node "cent-os-1.c.exalted-tempo-176004.internal" {
     mode   => "0750",
   }
 
+  #testing
 }
