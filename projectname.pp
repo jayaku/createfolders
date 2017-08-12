@@ -10,3 +10,4 @@ Puppet has created this file.
 ",}
 
 } # End node cent-os-1.c.exalted-tempo-176004.internale
+#This is a test for checkout
