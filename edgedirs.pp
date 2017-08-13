@@ -10,6 +10,7 @@ node "cent-os-1.c.exalted-tempo-176004.internal" {
     mode   => "0750",
   }
 
+  #this is a git hub test
 
   $epmcodes.each |String $epmcode | {
     file { "/landing1/ib/${epmcode}/metadata":
